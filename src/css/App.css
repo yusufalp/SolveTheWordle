@@ -3,10 +3,21 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   font-size: calc(4px + 2vmin);
-  color: white;
+}
+
+input {
+  font-size: 30px;
+  letter-spacing: 12px;
+  text-indent: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 180px;
+  height: 36px;
+}
+
+button {
+  display: block;
 }
