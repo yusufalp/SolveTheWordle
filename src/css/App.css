@@ -5,20 +5,43 @@
 .App-header {
   display: flex;
   justify-content: center;
-  font-size: calc(4px + 2vmin);
 }
 
 input {
-  font-size: 30px;
-  letter-spacing: 12px;
-  text-indent: 12px;
+  font-size: 32px;
   text-align: center;
+  text-indent: 4px;
   text-transform: uppercase;
-  width: 180px;
-  height: 36px;
+  letter-spacing: 6px;
+  outline: none;
+  width: 190px;
+  height: 32px;
 }
 
 button {
-  margin: 12px auto;
   display: block;
+  margin: 12px auto 36px;
+}
+
+.letter-grid {
+  display: inline-block;
+  border: 2px solid white;
+  box-sizing: border-box;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0px 2px 6px;
+  width: 36px;
+  height: 36px;
+}
+
+.bg-black {
+  background-color: black;
+}
+
+.bg-yellow {
+  background-color: #b59f3b;
+}
+
+.bg-green {
+  background-color: #538d4e;
 }
