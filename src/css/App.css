@@ -8,14 +8,14 @@
 }
 
 input {
-  font-size: 32px;
+  font-size: 60px;
   text-align: center;
   text-indent: 4px;
   text-transform: uppercase;
   letter-spacing: 6px;
   outline: none;
-  width: 190px;
-  height: 32px;
+  width: 370px;
+  height: 60px;
 }
 
 button {
@@ -25,17 +25,17 @@ button {
 
 .letter-grid {
   display: inline-block;
-  border: 2px solid white;
+  border: none;
   box-sizing: border-box;
-  font-size: 24px;
+  font-size: 60px;
   font-weight: bold;
   margin: 0px 2px 6px;
-  width: 36px;
-  height: 36px;
+  width: 72px;
+  height: 72px;
 }
 
 .bg-black {
-  background-color: black;
+  background-color: #3a3a3c;
 }
 
 .bg-yellow {
