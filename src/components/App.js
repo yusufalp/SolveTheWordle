@@ -11,7 +11,7 @@ function App() {
   const [currentGuess, setCurrentGuess] = useState("");
   const [userGuesses, setUserGuesses] = useState([]);
   const [userGuessAnalysis, setUserGuessAnalysis] = useState([]);
-  const [possibleAnswers, setPossibleAnswers] = useState(wordsList);
+  const possibleAnswers = wordsList;
 
   return (
     <div className="App">
