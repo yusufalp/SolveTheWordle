@@ -1,9 +1,7 @@
-import { useState } from 'react';
+import { analyzeCurrentGuess } from '../functions/analyzeCurrentGuess';
 
-const Form = () => {
+const Form = ({ currentGuess, setCurrentGuess, userGuesses, setUserGuesses, userGuessAnalysis, setUserGuessAnalysis }) => {
   const regex = /^[a-zA-Z]+$/;
-
-  const [guess, setGuess] = useState("");
 
   const handleInvalidCharacters = (e) => {
     if (!regex.test(e.key)) {
@@ -11,25 +9,34 @@ const Form = () => {
     }
   }
 
-  const handleChange = (e) => {
-    if (regex.test(e.target.value)) {
-      setGuess(e.target.value);
+  const handleInputChange = (e) => {
+    if (regex.test(e.target.value) || e.target.value === "") {
+      setCurrentGuess(e.target.value.toUpperCase());
     }
   }
 
-  console.log(guess);
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    if (currentGuess.length === 5) {
+      let currentGuessAnalysis = analyzeCurrentGuess(currentGuess);
+      setUserGuessAnalysis([...userGuessAnalysis, currentGuessAnalysis])
+      setUserGuesses([...userGuesses, currentGuess]);
+      setCurrentGuess("");
+    }
+  }
 
   return (
-
-    <form>
+    <form onSubmit={handleFormSubmit}>
       <label htmlFor="guess"></label>
       <input
         id="guess"
         name="guess"
         type="text"
+        value={currentGuess}
         maxLength="5"
         autoFocus
-        onChange={handleChange}
+        required
+        onChange={handleInputChange}
         onKeyDown={handleInvalidCharacters}
       ></input>
       <button type="submit">Enter</button>
