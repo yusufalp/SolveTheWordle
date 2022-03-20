@@ -1,8 +1,8 @@
-// import { eliminateInvalidWords } from "../functions/eliminateInvalidWords";
+import { eliminateInvalidWords } from "../functions/eliminateInvalidWords";
 
 const Result = ({ possibleAnswers, userGuessAnalysis }) => {
   for (let analysis of userGuessAnalysis) {
-    possibleAnswers = [];
+    possibleAnswers = eliminateInvalidWords(possibleAnswers, analysis);
   }
   return (
     <div>
