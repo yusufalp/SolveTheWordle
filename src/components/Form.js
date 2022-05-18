@@ -39,7 +39,7 @@ const Form = ({ currentGuess, setCurrentGuess, userGuesses, setUserGuesses, user
         onChange={handleInputChange}
         onKeyDown={handleInvalidCharacters}
       ></input>
-      <button type="submit">Enter</button>
+      <button type="submit">ENTER</button>
     </form>
   );
 }

@@ -40,6 +40,9 @@ input {
 button {
   display: block;
   margin: 12px auto 36px;
+  border-radius: 5px;
+  border: none;
+  padding: 6px 12px;
 }
 
 .answer {
@@ -71,5 +74,9 @@ button {
     font-size: 60px;
     width: 370px;
     height: 60px;
+  }
+
+  .answer {
+    font-size: 40px;
   }
 }
