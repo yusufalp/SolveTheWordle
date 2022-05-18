@@ -15,24 +15,26 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      {userGuessAnalysis.map((analysis, ind) => (
-        <Words
-          key={ind}
-          indX={ind}
+      <div class="user">
+        <Header />
+        {userGuessAnalysis.map((analysis, ind) => (
+          <Words
+            key={ind}
+            indX={ind}
+            userGuessAnalysis={userGuessAnalysis}
+            setUserGuessAnalysis={setUserGuessAnalysis}
+            analysis={analysis}
+          />
+        ))}
+        <Form
+          currentGuess={currentGuess}
+          setCurrentGuess={setCurrentGuess}
+          userGuesses={userGuesses}
+          setUserGuesses={setUserGuesses}
           userGuessAnalysis={userGuessAnalysis}
           setUserGuessAnalysis={setUserGuessAnalysis}
-          analysis={analysis}
         />
-      ))}
-      <Form
-        currentGuess={currentGuess}
-        setCurrentGuess={setCurrentGuess}
-        userGuesses={userGuesses}
-        setUserGuesses={setUserGuesses}
-        userGuessAnalysis={userGuessAnalysis}
-        setUserGuessAnalysis={setUserGuessAnalysis}
-      />
+      </div>
       {userGuesses.length >= 1 &&
         <Result
           possibleAnswers={possibleAnswers}

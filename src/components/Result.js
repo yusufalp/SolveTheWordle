@@ -7,7 +7,7 @@ const Result = ({ possibleAnswers, userGuessAnalysis }) => {
   return (
     <div>
       {possibleAnswers.map((answer, ind) => (
-        <div key={`${ind}-${answer}`}>{answer}</div>
+        <div class="answer" key={`${ind}-${answer}`}>{answer.toUpperCase()}</div>
       ))}
     </div>
   );
