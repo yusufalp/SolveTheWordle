@@ -7,15 +7,34 @@
   justify-content: center;
 }
 
+.letter-grid {
+  display: inline-block;
+  border: none;
+  box-sizing: border-box;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0px 2px 6px;
+  width: 36px;
+  height: 36px;
+}
+
+.user {
+  position: sticky;
+  background-color: #121213;
+  top: 0;
+  margin-bottom: 12px;
+  border-bottom: 1px solid;
+}
+
 input {
-  font-size: 60px;
+  font-size: 30px;
   text-align: center;
   text-indent: 4px;
   text-transform: uppercase;
   letter-spacing: 6px;
   outline: none;
-  width: 370px;
-  height: 60px;
+  width: 185px;
+  height: 30px;
 }
 
 button {
@@ -23,15 +42,10 @@ button {
   margin: 12px auto 36px;
 }
 
-.letter-grid {
-  display: inline-block;
-  border: none;
-  box-sizing: border-box;
-  font-size: 60px;
-  font-weight: bold;
-  margin: 0px 2px 6px;
-  width: 72px;
-  height: 72px;
+.answer {
+  font-family: "Roboto Mono", monospace;
+  font-size: 20px;
+  letter-spacing: 6px;
 }
 
 .bg-black {
@@ -44,4 +58,18 @@ button {
 
 .bg-green {
   background-color: #538d4e;
+}
+
+@media screen and (min-width: 480px) {
+  .letter-grid {
+    font-size: 60px;
+    width: 72px;
+    height: 72px;
+  }
+
+  input {
+    font-size: 60px;
+    width: 370px;
+    height: 60px;
+  }
 }
