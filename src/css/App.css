@@ -86,4 +86,9 @@ button {
   .answer {
     font-size: 40px;
   }
+
+  .fa-circle-info {
+    font-size: 24px;
+    padding: 12px 16px;
+  }
 }
