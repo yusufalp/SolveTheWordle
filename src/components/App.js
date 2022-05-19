@@ -16,6 +16,7 @@ function App() {
   return (
     <div className="App">
       <div class="user">
+        <i class="fa-solid fa-circle-info"></i>
         <Header />
         {userGuessAnalysis.map((analysis, ind) => (
           <Words

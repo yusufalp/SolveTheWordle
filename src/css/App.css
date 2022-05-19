@@ -63,6 +63,13 @@ button {
   background-color: #538d4e;
 }
 
+.fa-circle-info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 6px 8px;
+}
+
 @media screen and (min-width: 480px) {
   .letter-grid {
     font-size: 60px;
