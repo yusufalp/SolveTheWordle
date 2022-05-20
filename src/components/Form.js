@@ -34,6 +34,7 @@ const Form = ({ currentGuess, setCurrentGuess, userGuesses, setUserGuesses, user
         type="text"
         value={currentGuess}
         maxLength="5"
+        placeholder="GUESS"
         autoFocus
         required
         onChange={handleInputChange}
