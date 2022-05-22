@@ -4,6 +4,7 @@ import Form from './Form';
 import Words from './Words';
 import Result from './Result';
 import { wordsList } from '../wordsList';
+import Modal from './Modal';
 
 import '../css/App.css';
 
@@ -11,12 +12,14 @@ function App() {
   const [currentGuess, setCurrentGuess] = useState("");
   const [userGuesses, setUserGuesses] = useState([]);
   const [userGuessAnalysis, setUserGuessAnalysis] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const possibleAnswers = wordsList;
 
   return (
     <div className="App">
-      <div class="user">
-        <i class="fa-solid fa-circle-info"></i>
+      <div className="user">
+        {!isModalOpen && <i className="fa-solid fa-circle-info" onClick={() => setIsModalOpen(!isModalOpen)}></i>}
+        {isModalOpen && <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />}
         <Header />
         {userGuessAnalysis.map((analysis, ind) => (
           <Words
