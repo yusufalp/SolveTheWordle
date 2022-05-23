@@ -63,11 +63,29 @@ button {
   background-color: #538d4e;
 }
 
-.fa-circle-info {
+.fa-icons-style {
+  font-size: 24px;
+  padding: 6px 8px;
   position: absolute;
   top: 0;
   right: 0;
-  padding: 6px 8px;
+}
+
+.info {
+  width: 80vw;
+  height: 80vh;
+  border: 1px solid;
+  background-color: #121213;
+  position: fixed;
+  top: 80px;
+  right: 10%;
+  left: 10%;
+}
+
+.info-content {
+  width: 80%;
+  margin: auto;
+  text-align: left;
 }
 
 @media screen and (min-width: 480px) {
@@ -90,5 +108,9 @@ button {
   .fa-circle-info {
     font-size: 24px;
     padding: 12px 16px;
+  }
+
+  .info-content {
+    width: 50%;
   }
 }
