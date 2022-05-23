@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <div className="user">
-        {!isModalOpen && <i className="fa-solid fa-circle-info" onClick={() => setIsModalOpen(!isModalOpen)}></i>}
+        {!isModalOpen && <i className="fa-solid fa-circle-info fa-icons-style" onClick={() => setIsModalOpen(!isModalOpen)}></i>}
         {isModalOpen && <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />}
         <Header />
         {userGuessAnalysis.map((analysis, ind) => (
