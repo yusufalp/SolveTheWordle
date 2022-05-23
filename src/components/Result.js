@@ -6,6 +6,7 @@ const Result = ({ possibleAnswers, userGuessAnalysis }) => {
   }
   return (
     <div>
+      <p>Possible Answers: {possibleAnswers.length}</p>
       {possibleAnswers.map((answer, ind) => (
         <div class="answer" key={`${ind}-${answer}`}>{answer.toUpperCase()}</div>
       ))}
