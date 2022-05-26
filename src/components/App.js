@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import Header from './Header';
-import Form from './Form';
-import Words from './Words';
-import Result from './Result';
-import { wordsList } from '../wordsList';
 import Modal from './Modal';
+import Words from './Words';
+import Form from './Form';
+import Result from './Result';
+import FooterLogo from './FooterLogo';
 
+import { wordsList } from '../wordsList';
 import '../css/App.css';
 
 function App() {
@@ -44,6 +45,8 @@ function App() {
           possibleAnswers={possibleAnswers}
           userGuessAnalysis={userGuessAnalysis}
         />}
+      <FooterLogo classes="twitter-logo" logo="twitter" link="https://twitter.com/yalp122" />
+      <FooterLogo classes="github-logo" logo="github" link="https://github.com/yusufalp" />
     </div>
   );
 }
