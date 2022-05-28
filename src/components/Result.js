@@ -8,7 +8,7 @@ const Result = ({ possibleAnswers, userGuessAnalysis }) => {
     <div>
       <p>Possible Answers: {possibleAnswers.length}</p>
       {possibleAnswers.map((answer, ind) => (
-        <div class="answer" key={`${ind}-${answer}`}>{answer.toUpperCase()}</div>
+        <div className="answer" key={`${ind}-${answer}`}>{answer.toUpperCase()}</div>
       ))}
     </div>
   );

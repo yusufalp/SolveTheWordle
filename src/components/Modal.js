@@ -1,7 +1,7 @@
 const Modal = ({ isModalOpen, setIsModalOpen }) => {
   return (
     <div className="info">
-      <i class="fa-solid fa-xmark fa-icons-style" onClick={() => setIsModalOpen(!isModalOpen)}></i>
+      <i className="fa-solid fa-xmark fa-icons-style" onClick={() => setIsModalOpen(!isModalOpen)}></i>
       <div className="info-content">
         <p>
           Each guess must be a valid 5 letter word. Enter your guess into the field and hit the enter button to submit.
