@@ -12,8 +12,6 @@ export const eliminateInvalidWords = (possibleAnswers, userGuessAnalysis) => {
 
   for (let i = 0; i < userGuessAnalysis.length; i++) {
     let lowercaseLetter = userGuessAnalysis[i].letter.toLowerCase();
-    console.log(letterCount);
-    console.log(userGuessAnalysis[i]);
     if (userGuessAnalysis[i].position) {
       possibleAnswers = possibleAnswers.filter(word => word[i] === lowercaseLetter);
     } else {
