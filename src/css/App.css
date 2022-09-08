@@ -1,135 +1,145 @@
 .App {
-  text-align: center;
+	text-align: center;
 }
 
 .App-header {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .letter-grid {
-  display: inline-block;
-  border: none;
-  box-sizing: border-box;
-  font-size: 24px;
-  font-weight: bold;
-  margin: 0px 2px 6px;
-  width: 30px;
-  height: 30px;
+	display: inline-block;
+	border: none;
+	box-sizing: border-box;
+	font-size: 24px;
+	font-weight: bold;
+	margin: 0px 2px 6px;
+	width: 30px;
+	height: 30px;
 }
 
 .user {
-  background-color: #121213;
-  border-bottom: 1px solid;
+	background-color: #121213;
+	border-bottom: 1px solid;
 }
 
 input {
-  font-size: 30px;
-  text-align: center;
-  text-indent: 4px;
-  text-transform: uppercase;
-  letter-spacing: 6px;
-  outline: none;
-  width: 185px;
-  height: 30px;
+	font-size: 30px;
+	text-align: center;
+	text-indent: 4px;
+	text-transform: uppercase;
+	letter-spacing: 6px;
+	outline: none;
+	width: 185px;
+	height: 30px;
 }
 
 button {
-  display: block;
-  margin: 12px auto 36px;
-  border-radius: 5px;
-  border: none;
-  padding: 6px 12px;
+	display: block;
+	border: none;
+	border-radius: 5px;
+	background-color: #ffffff;
+	color: #000000;
+	font-size: 24px;
+	padding: 6px 12px;
+	margin: 12px auto 36px;
+	height: 42px;
+}
+
+button:hover {
+	background-color: #a9a9a9;
+	color: #ffffff;
+	cursor: pointer;
 }
 
 .answer {
-  font-family: "Roboto Mono", monospace;
-  font-size: 20px;
-  letter-spacing: 6px;
+	font-family: "Roboto Mono", monospace;
+	font-size: 20px;
+	letter-spacing: 6px;
 }
 
 .bg-black {
-  background-color: #3a3a3c;
+	background-color: #3a3a3c;
 }
 
 .bg-yellow {
-  background-color: #b59f3b;
+	background-color: #b59f3b;
 }
 
 .bg-green {
-  background-color: #538d4e;
+	background-color: #538d4e;
 }
 
 .fa-icons-style {
-  font-size: 24px;
-  padding: 6px 8px;
-  position: absolute;
-  top: 0;
-  right: 0;
+	font-size: 24px;
+	padding: 6px 8px;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 
 .info {
-  border: 1px solid;
-  background-color: #121213;
-  position: fixed;
-  top: 80px;
-  left: 15%;
-  width: 70vw;
+	border: 1px solid;
+	background-color: #121213;
+	position: fixed;
+	top: 80px;
+	left: 15%;
+	width: 70vw;
 }
 
 .info-content {
-  width: 80%;
-  margin: auto;
-  text-align: left;
+	text-align: left;
+	margin: auto;
+	width: 80%;
 }
 
 .twitter-logo,
 .github-logo {
-  color: #fff;
-  font-size: 24px;
-  text-decoration: none;
-  position: fixed;
-  bottom: 0;
-  padding: 6px 12px;
-  margin: 0;
+	color: #fff;
+	font-size: 24px;
+	text-decoration: none;
+	position: fixed;
+	bottom: 0;
+	padding: 6px 12px;
+	margin: 0;
 }
 
 .twitter-logo {
-  left: 0;
+	left: 0;
 }
 
 .github-logo {
-  right: 0;
+	right: 0;
 }
 
 @media screen and (min-width: 480px) {
-  .letter-grid {
-    font-size: 48px;
-    width: 60px;
-    height: 60px;
-  }
+	.letter-grid {
+		font-size: 48px;
+		width: 60px;
+		height: 60px;
+	}
 
-  input {
-    font-size: 48px;
-    width: 310px;
-    height: 60px;
-  }
+	input {
+		font-size: 48px;
+		width: 310px;
+		height: 60px;
+	}
 
-  .answer {
-    font-size: 40px;
-  }
+	.answer {
+		font-size: 40px;
+	}
 
-  .fa-circle-info {
-    font-size: 24px;
-    padding: 12px 16px;
-  }
+	.fa-circle-info {
+		font-size: 24px;
+		padding: 12px 16px;
+	}
 
-  .info {
-    width: 80vw;
-    left: 10%;
-  }
+	.info {
+		width: 80vw;
+		left: 10%;
+	}
 
-  .info-content {
-    width: 50%;
-  }
+	.info-content {
+		width: 50%;
+	}
 }
