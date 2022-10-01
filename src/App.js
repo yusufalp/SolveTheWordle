@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import Header from './components/Header'
 import Modal from './components/Modal';
 import Words from './components/Words';
 import Form from './components/Form';
 import Result from './components/Result';
-import FooterLogo from './components/FooterLogo';
+import Header from './components/shared/Header'
+import FooterLogo from './components/shared/FooterLogo';
 
-import { wordsList } from './wordsList';
+import { wordsList } from './functions/wordsList';
+
 import './App.css';
 
 function App() {
