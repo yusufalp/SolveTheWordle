@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import Header from './Header';
-import Modal from './Modal';
-import Words from './Words';
-import Form from './Form';
-import Result from './Result';
-import FooterLogo from './FooterLogo';
+import Header from './components/Header'
+import Modal from './components/Modal';
+import Words from './components/Words';
+import Form from './components/Form';
+import Result from './components/Result';
+import FooterLogo from './components/FooterLogo';
 
-import { wordsList } from '../wordsList';
-import '../css/App.css';
+import { wordsList } from './wordsList';
+import './App.css';
 
 function App() {
   const [currentGuess, setCurrentGuess] = useState("");
