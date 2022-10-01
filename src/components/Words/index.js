@@ -1,4 +1,4 @@
-import Grid from './Grid';
+import Grid from '../Grid';
 
 const Words = ({ indX, userGuessAnalysis, setUserGuessAnalysis, analysis }) => {
   return (

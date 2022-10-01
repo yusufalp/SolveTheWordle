@@ -19,7 +19,6 @@ const Grid = ({ indX, indY, userGuessAnalysis, setUserGuessAnalysis, letter }) =
     setUserGuessAnalysis(newUserGuessAnalysis)
   }
 
-
   return (
     <span
       className={`letter-grid ${color}`}

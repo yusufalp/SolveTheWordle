@@ -1,4 +1,4 @@
-import { analyzeCurrentGuess } from '../analyzeCurrentGuess';
+import { analyzeCurrentGuess } from '../../functions/analyzeCurrentGuess';
 
 const Form = ({ currentGuess, setCurrentGuess, userGuesses, setUserGuesses, userGuessAnalysis, setUserGuessAnalysis }) => {
   const regex = /^[a-zA-Z]+$/;
