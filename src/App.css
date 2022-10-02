@@ -2,11 +2,6 @@
 	text-align: center;
 }
 
-.App-header {
-	display: flex;
-	justify-content: center;
-}
-
 .letter-grid {
 	display: inline-block;
 	border: none;
