@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 const Grid = ({ indX, indY, userGuessAnalysis, setUserGuessAnalysis, letter }) => {
   const [color, setColor] = useState("bg-black");
@@ -16,7 +16,7 @@ const Grid = ({ indX, indY, userGuessAnalysis, setUserGuessAnalysis, letter }) =
       setColor("bg-black");
     }
     let newUserGuessAnalysis = [...userGuessAnalysis];
-    setUserGuessAnalysis(newUserGuessAnalysis)
+    setUserGuessAnalysis(newUserGuessAnalysis);
   }
 
   return (
