@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Modal = ({ isModalOpen, setIsModalOpen }) => {
   return (
     <div className="info">
@@ -17,7 +19,7 @@ const Modal = ({ isModalOpen, setIsModalOpen }) => {
         </p>
       </div>
     </div>
-  )
+  );
 }
 
 export default Modal;
