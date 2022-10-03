@@ -20,7 +20,7 @@ export const eliminateInvalidWords = (possibleAnswers, userGuessAnalysis) => {
         possibleAnswers = possibleAnswers.filter(word => word[i] !== lowercaseLetter);
       } else {
         if (letterCount[lowercaseLetter] === 1) {
-          possibleAnswers = possibleAnswers.filter(word => !word.includes(lowercaseLetter))
+          possibleAnswers = possibleAnswers.filter(word => !word.includes(lowercaseLetter));
         }
       }
     }
