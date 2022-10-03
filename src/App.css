@@ -18,35 +18,6 @@
 	border-bottom: 1px solid;
 }
 
-input {
-	font-size: 30px;
-	text-align: center;
-	text-indent: 4px;
-	text-transform: uppercase;
-	letter-spacing: 6px;
-	outline: none;
-	width: 185px;
-	height: 30px;
-}
-
-button {
-	display: block;
-	border: none;
-	border-radius: 5px;
-	background-color: #ffffff;
-	color: #000000;
-	font-size: 24px;
-	padding: 6px 12px;
-	margin: 12px auto 36px;
-	height: 42px;
-}
-
-button:hover {
-	background-color: #a9a9a9;
-	color: #ffffff;
-	cursor: pointer;
-}
-
 .answer {
 	font-family: "Roboto Mono", monospace;
 	font-size: 20px;
@@ -111,12 +82,6 @@ button:hover {
 	.letter-grid {
 		font-size: 48px;
 		width: 60px;
-		height: 60px;
-	}
-
-	input {
-		font-size: 48px;
-		width: 310px;
 		height: 60px;
 	}
 
