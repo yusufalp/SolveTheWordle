@@ -1,3 +1,4 @@
+import React from 'react';
 import Grid from '../Grid';
 
 const Words = ({ indX, userGuessAnalysis, setUserGuessAnalysis, analysis }) => {
