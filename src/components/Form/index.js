@@ -1,6 +1,10 @@
+import React, { useState } from 'react';
 import { analyzeCurrentGuess } from '../../functions/analyzeCurrentGuess';
 
+import './style.css';
+
 const Form = ({ currentGuess, setCurrentGuess, userGuesses, setUserGuesses, userGuessAnalysis, setUserGuessAnalysis }) => {
+  const [isFiveLetter, setIsFiveLetter] = useState(true);
   const regex = /^[a-zA-Z]+$/;
 
   const handleInvalidCharacters = (e) => {
@@ -18,15 +22,18 @@ const Form = ({ currentGuess, setCurrentGuess, userGuesses, setUserGuesses, user
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (currentGuess.length === 5) {
+      setIsFiveLetter(true);
       let currentGuessAnalysis = analyzeCurrentGuess(currentGuess);
       setUserGuessAnalysis([...userGuessAnalysis, currentGuessAnalysis])
       setUserGuesses([...userGuesses, currentGuess]);
       setCurrentGuess("");
+    } else {
+      setIsFiveLetter(false);
     }
   }
 
   return (
-    <form onSubmit={handleFormSubmit}>
+    <form onSubmit={handleFormSubmit} aria-label="enter guess">
       <label htmlFor="guess"></label>
       <input
         id="guess"
@@ -40,6 +47,7 @@ const Form = ({ currentGuess, setCurrentGuess, userGuesses, setUserGuesses, user
         onChange={handleInputChange}
         onKeyDown={handleInvalidCharacters}
       ></input>
+      {isFiveLetter ? "" : <p className="error">You must enter a 5 letter word</p>}
       <button type="submit">ENTER</button>
     </form>
   );
