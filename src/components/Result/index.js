@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { eliminateInvalidWords } from "../../functions/eliminateInvalidWords";
 
 const Result = ({ possibleAnswers, userGuessAnalysis }) => {
