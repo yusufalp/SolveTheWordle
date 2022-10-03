@@ -24,7 +24,7 @@ const Form = ({ currentGuess, setCurrentGuess, userGuesses, setUserGuesses, user
     if (currentGuess.length === 5) {
       setIsFiveLetter(true);
       let currentGuessAnalysis = analyzeCurrentGuess(currentGuess);
-      setUserGuessAnalysis([...userGuessAnalysis, currentGuessAnalysis])
+      setUserGuessAnalysis([...userGuessAnalysis, currentGuessAnalysis]);
       setUserGuesses([...userGuesses, currentGuess]);
       setCurrentGuess("");
     } else {
