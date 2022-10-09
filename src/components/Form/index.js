@@ -5,11 +5,15 @@ import './style.css';
 
 const Form = ({ currentGuess, setCurrentGuess, userGuesses, setUserGuesses, userGuessAnalysis, setUserGuessAnalysis }) => {
   const [isFiveLetter, setIsFiveLetter] = useState(true);
+  const [isEnglishLetter, setIsEnglishLetter] = useState(true);
   const regex = /^[a-zA-Z]+$/;
 
   const handleInvalidCharacters = (e) => {
     if (!regex.test(e.key)) {
       e.preventDefault();
+      setIsEnglishLetter(false);
+    } else {
+      setIsEnglishLetter(true);
     }
   }
 
@@ -19,8 +23,7 @@ const Form = ({ currentGuess, setCurrentGuess, userGuesses, setUserGuesses, user
     }
   }
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
+  const handleFormSubmit = () => {
     if (currentGuess.length === 5) {
       setIsFiveLetter(true);
       let currentGuessAnalysis = analyzeCurrentGuess(currentGuess);
@@ -33,9 +36,9 @@ const Form = ({ currentGuess, setCurrentGuess, userGuesses, setUserGuesses, user
   }
 
   return (
-    <form onSubmit={handleFormSubmit} aria-label="enter guess">
-      <label htmlFor="guess"></label>
+    <>
       <input
+        data-testid="guess-box"
         id="guess"
         name="guess"
         type="text"
@@ -47,9 +50,10 @@ const Form = ({ currentGuess, setCurrentGuess, userGuesses, setUserGuesses, user
         onChange={handleInputChange}
         onKeyDown={handleInvalidCharacters}
       ></input>
+      {isEnglishLetter ? "" : <p className="Error">English letters only</p>}
       {isFiveLetter ? "" : <p className="error">You must enter a 5 letter word</p>}
-      <button type="submit">ENTER</button>
-    </form>
+      <button type="button" onClick={handleFormSubmit}>ENTER</button>
+    </>
   );
 }
 
