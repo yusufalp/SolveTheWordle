@@ -1,0 +1,18 @@
+.twitter-logo,
+.github-logo {
+	color: #fff;
+	font-size: 24px;
+	text-decoration: none;
+	position: fixed;
+	bottom: 0;
+	padding: 6px 12px;
+	margin: 0;
+}
+
+.twitter-logo {
+	left: 0;
+}
+
+.github-logo {
+	right: 0;
+}
