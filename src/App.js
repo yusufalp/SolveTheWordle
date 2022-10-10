@@ -6,7 +6,7 @@ import Result from './components/Result';
 import Header from './components/shared/Header';
 import FooterLogo from './components/shared/FooterLogo';
 
-import { wordsList } from './functions/wordsList';
+import { wordsList } from './utils/wordsList';
 
 import './App.css';
 
