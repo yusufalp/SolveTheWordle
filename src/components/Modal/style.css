@@ -1,0 +1,25 @@
+.info {
+	border: 1px solid;
+	background-color: #121213;
+	position: fixed;
+	top: 80px;
+	left: 15%;
+	width: 70vw;
+}
+
+.info-content {
+	text-align: left;
+	margin: auto;
+	width: 80%;
+}
+
+@media screen and (min-width: 480px) {
+	.info {
+		width: 80vw;
+		left: 10%;
+	}
+
+	.info-content {
+		width: 50%;
+	}
+}
