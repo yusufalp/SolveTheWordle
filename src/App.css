@@ -2,38 +2,9 @@
 	text-align: center;
 }
 
-.letter-grid {
-	display: inline-block;
-	border: none;
-	box-sizing: border-box;
-	font-size: 24px;
-	font-weight: bold;
-	margin: 0px 2px 6px;
-	width: 30px;
-	height: 30px;
-}
-
 .user {
 	background-color: #121213;
 	border-bottom: 1px solid;
-}
-
-.answer {
-	font-family: "Roboto Mono", monospace;
-	font-size: 20px;
-	letter-spacing: 6px;
-}
-
-.bg-black {
-	background-color: #3a3a3c;
-}
-
-.bg-yellow {
-	background-color: #b59f3b;
-}
-
-.bg-green {
-	background-color: #538d4e;
 }
 
 .fa-icons-style {
@@ -44,43 +15,9 @@
 	right: 0;
 }
 
-.info {
-	border: 1px solid;
-	background-color: #121213;
-	position: fixed;
-	top: 80px;
-	left: 15%;
-	width: 70vw;
-}
-
-.info-content {
-	text-align: left;
-	margin: auto;
-	width: 80%;
-}
-
 @media screen and (min-width: 480px) {
-	.letter-grid {
-		font-size: 48px;
-		width: 60px;
-		height: 60px;
-	}
-
-	.answer {
-		font-size: 40px;
-	}
-
 	.fa-circle-info {
 		font-size: 24px;
 		padding: 12px 16px;
-	}
-
-	.info {
-		width: 80vw;
-		left: 10%;
-	}
-
-	.info-content {
-		width: 50%;
 	}
 }
