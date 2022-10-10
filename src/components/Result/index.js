@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { eliminateInvalidWords } from '../../functions/eliminateInvalidWords';
+import { eliminateInvalidWords } from '../../utils/eliminateInvalidWords';
 
 const Result = ({ possibleAnswers, userGuessAnalysis }) => {
   for (let analysis of userGuessAnalysis) {
