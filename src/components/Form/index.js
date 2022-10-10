@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { analyzeCurrentGuess } from '../../functions/analyzeCurrentGuess';
+import { analyzeCurrentGuess } from '../../utils/analyzeCurrentGuess';
 
 import './style.css';
 
@@ -23,7 +23,8 @@ const Form = ({ currentGuess, setCurrentGuess, userGuesses, setUserGuesses, user
     }
   }
 
-  const handleFormSubmit = () => {
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
     if (currentGuess.length === 5) {
       setIsFiveLetter(true);
       let currentGuessAnalysis = analyzeCurrentGuess(currentGuess);
@@ -36,7 +37,7 @@ const Form = ({ currentGuess, setCurrentGuess, userGuesses, setUserGuesses, user
   }
 
   return (
-    <>
+    <form onSubmit={handleFormSubmit}>
       <input
         data-testid="guess-box"
         id="guess"
@@ -52,8 +53,8 @@ const Form = ({ currentGuess, setCurrentGuess, userGuesses, setUserGuesses, user
       ></input>
       {isEnglishLetter ? "" : <p className="Error">English letters only</p>}
       {isFiveLetter ? "" : <p className="error">You must enter a 5 letter word</p>}
-      <button type="button" onClick={handleFormSubmit}>ENTER</button>
-    </>
+      <button type="submit">ENTER</button>
+    </form>
   );
 }
 
