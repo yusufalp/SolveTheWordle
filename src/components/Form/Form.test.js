@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import Form from './index';
 
 afterEach(cleanup);
