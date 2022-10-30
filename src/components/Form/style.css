@@ -1,24 +1,24 @@
 input {
-	font-size: 30px;
+	font-size: 36px;
 	text-align: center;
-	text-indent: 4px;
+	text-indent: 6px;
 	text-transform: uppercase;
 	letter-spacing: 6px;
 	outline: none;
-	width: 185px;
-	height: 30px;
+	width: 196px;
+	height: 36px;
 }
 
 button {
 	display: block;
 	border: none;
-	border-radius: 5px;
+	border-radius: 6px;
 	background-color: #ffffff;
 	color: #000000;
 	font-size: 24px;
-	padding: 6px 12px;
+	padding: 0 12px;
 	margin: 12px auto 36px;
-	height: 42px;
+	height: 36px;
 }
 
 button:hover {
@@ -30,7 +30,7 @@ button:hover {
 @media screen and (min-width: 480px) {
 	input {
 		font-size: 48px;
-		width: 310px;
+		width: 318px;
 		height: 60px;
 	}
 }
