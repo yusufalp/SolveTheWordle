@@ -1,7 +1,14 @@
-import React, { useState } from 'react';
-import './style.css';
+import React, { useState } from "react";
 
-const Grid = ({ indX, indY, userGuessAnalysis, setUserGuessAnalysis, letter }) => {
+import "./style.css";
+
+const Grid = ({
+  indX,
+  indY,
+  userGuessAnalysis,
+  setUserGuessAnalysis,
+  letter,
+}) => {
   const [color, setColor] = useState("bg-black");
 
   const handleClick = () => {
@@ -20,16 +27,13 @@ const Grid = ({ indX, indY, userGuessAnalysis, setUserGuessAnalysis, letter }) =
     }
 
     setUserGuessAnalysis(updatedUserGuessAnalysis);
-  }
+  };
 
   return (
-    <span
-      className={`letter-grid ${color}`}
-      onClick={handleClick}
-    >
+    <span className={`letter-grid ${color}`} onClick={handleClick}>
       {letter}
     </span>
   );
-}
+};
 
 export default Grid;

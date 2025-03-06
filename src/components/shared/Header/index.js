@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import './style.css';
+import "./style.css";
 
 const Header = () => {
   return (
@@ -8,6 +8,6 @@ const Header = () => {
       <h1 className="app-header">Solve The Wordle</h1>
     </header>
   );
-}
+};
 
 export default Header;

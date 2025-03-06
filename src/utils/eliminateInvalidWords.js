@@ -13,17 +13,25 @@ export const eliminateInvalidWords = (possibleAnswers, userGuessAnalysis) => {
   for (let i = 0; i < userGuessAnalysis.length; i++) {
     let lowercaseLetter = userGuessAnalysis[i].letter.toLowerCase();
     if (userGuessAnalysis[i].position) {
-      possibleAnswers = possibleAnswers.filter(word => word[i] === lowercaseLetter);
+      possibleAnswers = possibleAnswers.filter(
+        (word) => word[i] === lowercaseLetter
+      );
     } else {
       if (userGuessAnalysis[i].includes) {
-        possibleAnswers = possibleAnswers.filter(word => word.includes(lowercaseLetter));
-        possibleAnswers = possibleAnswers.filter(word => word[i] !== lowercaseLetter);
+        possibleAnswers = possibleAnswers.filter((word) =>
+          word.includes(lowercaseLetter)
+        );
+        possibleAnswers = possibleAnswers.filter(
+          (word) => word[i] !== lowercaseLetter
+        );
       } else {
         if (letterCount[lowercaseLetter] === 1) {
-          possibleAnswers = possibleAnswers.filter(word => !word.includes(lowercaseLetter));
+          possibleAnswers = possibleAnswers.filter(
+            (word) => !word.includes(lowercaseLetter)
+          );
         }
       }
     }
   }
   return possibleAnswers;
-}
+};
