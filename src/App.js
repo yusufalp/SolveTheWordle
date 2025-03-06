@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
-import Modal from './components/Modal';
-import Words from './components/Words';
-import Form from './components/Form';
-import Result from './components/Result';
-import Header from './components/shared/Header';
-import FooterLogo from './components/shared/FooterLogo';
+import React, { useState } from "react";
 
-import { wordsList } from './utils/wordsList';
+import Modal from "./components/Modal";
+import Words from "./components/Words";
+import Form from "./components/Form";
+import Result from "./components/Result";
+import Header from "./components/shared/Header";
+import FooterLogo from "./components/shared/FooterLogo";
 
-import './App.css';
+import { wordsList } from "./utils/wordsList";
+
+import "./App.css";
 
 function App() {
   const [currentGuess, setCurrentGuess] = useState("");
@@ -20,16 +21,24 @@ function App() {
   return (
     <div className="App" data-testid="App">
       <div className="user">
-        {!isModalOpen && <i className="fa-solid fa-circle-info fa-icons-style" onClick={() => setIsModalOpen(!isModalOpen)} data-testid="info-icon"></i>}
-        {isModalOpen && <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />}
+        {!isModalOpen && (
+          <i
+            className="fa-solid fa-circle-info fa-icons-style"
+            onClick={() => setIsModalOpen(!isModalOpen)}
+            data-testid="info-icon"
+          ></i>
+        )}
+        {isModalOpen && (
+          <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+        )}
         <Header />
-        {userGuessAnalysis.map((analysis, ind) => (
+        {userGuessAnalysis.map((analysis, indX) => (
           <Words
-            key={ind}
-            indX={ind}
+            key={indX}
+            indX={indX}
+            analysis={analysis}
             userGuessAnalysis={userGuessAnalysis}
             setUserGuessAnalysis={setUserGuessAnalysis}
-            analysis={analysis}
           />
         ))}
         <Form
@@ -41,13 +50,22 @@ function App() {
           setUserGuessAnalysis={setUserGuessAnalysis}
         />
       </div>
-      {userGuesses.length >= 1 &&
+      {userGuesses.length >= 1 && (
         <Result
           possibleAnswers={possibleAnswers}
           userGuessAnalysis={userGuessAnalysis}
-        />}
-      <FooterLogo classes="twitter-logo" logo="twitter" link="https://twitter.com/yalp122" />
-      <FooterLogo classes="github-logo" logo="github" link="https://github.com/yusufalp" />
+        />
+      )}
+      <FooterLogo
+        className="twitter-logo"
+        logo="twitter"
+        link="https://twitter.com/yalp122"
+      />
+      <FooterLogo
+        className="github-logo"
+        logo="github"
+        link="https://github.com/yusufalp"
+      />
     </div>
   );
 }
