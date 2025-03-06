@@ -1,36 +1,36 @@
 input {
-	font-size: 36px;
-	text-align: center;
-	text-indent: 6px;
-	text-transform: uppercase;
-	letter-spacing: 6px;
-	outline: none;
-	width: 196px;
-	height: 36px;
+  font-size: 36px;
+  text-align: center;
+  text-indent: 6px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  outline: none;
+  width: 196px;
+  height: 36px;
 }
 
 button {
-	display: block;
-	border: none;
-	border-radius: 6px;
-	background-color: #ffffff;
-	color: #000000;
-	font-size: 24px;
-	padding: 0 12px;
-	margin: 12px auto 36px;
-	height: 36px;
+  display: block;
+  border: none;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 24px;
+  padding: 0 12px;
+  margin: 12px auto 36px;
+  height: 36px;
 }
 
 button:hover {
-	background-color: #a9a9a9;
-	color: #ffffff;
-	cursor: pointer;
+  background-color: #a9a9a9;
+  color: #ffffff;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 480px) {
-	input {
-		font-size: 48px;
-		width: 318px;
-		height: 60px;
-	}
+  input {
+    font-size: 48px;
+    width: 318px;
+    height: 60px;
+  }
 }

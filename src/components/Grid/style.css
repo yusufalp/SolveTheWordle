@@ -1,30 +1,30 @@
 .letter-grid {
-	display: inline-block;
-	border: none;
-	box-sizing: border-box;
-	font-size: 30px;
-	font-weight: bold;
-	margin: 0px 3px 6px;
-	width: 36px;
-	height: 36px;
+  display: inline-block;
+  border: none;
+  box-sizing: border-box;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0px 3px 6px;
+  width: 36px;
+  height: 36px;
 }
 
 .bg-black {
-	background-color: #3a3a3c;
+  background-color: #3a3a3c;
 }
 
 .bg-yellow {
-	background-color: #b59f3b;
+  background-color: #b59f3b;
 }
 
 .bg-green {
-	background-color: #538d4e;
+  background-color: #538d4e;
 }
 
 @media screen and (min-width: 480px) {
-	.letter-grid {
-		font-size: 48px;
-		width: 60px;
-		height: 60px;
-	}
+  .letter-grid {
+    font-size: 48px;
+    width: 60px;
+    height: 60px;
+  }
 }
