@@ -13,7 +13,6 @@ const Form = ({
   const [isEnglishLetter, setIsEnglishLetter] = useState(null);
 
   const regex = /^[a-zA-Z]+$/;
-  console.log('currentGuess :>> ', currentGuess);
 
   const handleInvalidCharacters = (e) => {
     if (e.key.match(regex)) {
