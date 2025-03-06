@@ -1,40 +1,47 @@
-import React, { useState } from 'react';
-import { analyzeCurrentGuess } from '../../utils/analyzeCurrentGuess';
+import React, { useState } from "react";
 
-import './style.css';
+import { analyzeGuess } from "../../utils/analyzeGuess";
 
-const Form = ({ currentGuess, setCurrentGuess, userGuesses, setUserGuesses, userGuessAnalysis, setUserGuessAnalysis }) => {
-  const [isFiveLetter, setIsFiveLetter] = useState(true);
-  const [isEnglishLetter, setIsEnglishLetter] = useState(true);
+import "./style.css";
+
+const Form = ({
+  currentGuess,
+  setCurrentGuess,
+  setUserGuesses,
+  setUserGuessAnalysis,
+}) => {
+  const [isEnglishLetter, setIsEnglishLetter] = useState(null);
+
   const regex = /^[a-zA-Z]+$/;
+  console.log('currentGuess :>> ', currentGuess);
 
   const handleInvalidCharacters = (e) => {
-    if (!regex.test(e.key)) {
-      e.preventDefault();
+    if (e.key.match(regex)) {
       setIsEnglishLetter(false);
     } else {
       setIsEnglishLetter(true);
     }
-  }
+  };
 
   const handleInputChange = (e) => {
-    if (regex.test(e.target.value) || e.target.value === "") {
+    if (e.target.value.match(regex) || e.target.value === "") {
       setCurrentGuess(e.target.value.toUpperCase());
     }
-  }
+  };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+
     if (currentGuess.length === 5) {
-      setIsFiveLetter(true);
-      let currentGuessAnalysis = analyzeCurrentGuess(currentGuess);
-      setUserGuessAnalysis([...userGuessAnalysis, currentGuessAnalysis]);
-      setUserGuesses([...userGuesses, currentGuess]);
+      let currentGuessAnalysis = analyzeGuess(currentGuess);
+
+      setUserGuessAnalysis((prevAnalysis) => [...prevAnalysis, currentGuessAnalysis]);
+      setUserGuesses((prevGuesses) => [...prevGuesses, currentGuess]);
       setCurrentGuess("");
     } else {
-      setIsFiveLetter(false);
+      return;
     }
-  }
+  };
 
   return (
     <form onSubmit={handleFormSubmit}>
@@ -49,13 +56,14 @@ const Form = ({ currentGuess, setCurrentGuess, userGuesses, setUserGuesses, user
         autoFocus
         required
         onChange={handleInputChange}
-        onKeyDown={handleInvalidCharacters}
+        onKeyUp={handleInvalidCharacters}
       ></input>
-      {isEnglishLetter ? "" : <p className="Error">English letters only</p>}
-      {isFiveLetter ? "" : <p className="error">You must enter a 5 letter word</p>}
+
+      {isEnglishLetter && <p className="error">English letters only</p>}
+
       <button type="submit">ENTER</button>
     </form>
   );
-}
+};
 
 export default Form;
