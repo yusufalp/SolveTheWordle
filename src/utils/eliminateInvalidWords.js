@@ -1,37 +1,43 @@
+/**
+ * Filters possible answers based on guess analysis
+ * @param {string[]} possibleAnswers - Array of possible word answers
+ * @param {Object[]} userGuessAnalysis - Array of analysis objects with letter, position, and includes properties
+ * @returns {string[]} Filtered array of possible answers
+ */
 export const eliminateInvalidWords = (possibleAnswers, userGuessAnalysis) => {
-  const letterCount = {};
+  // Early return for empty analysis
+  if (!userGuessAnalysis?.length) return possibleAnswers;
 
-  for (const element of userGuessAnalysis) {
-    let lowercaseLetter = element.letter.toLowerCase();
-    if (letterCount[lowercaseLetter]) {
-      letterCount[lowercaseLetter] += 1;
-    } else {
-      letterCount[lowercaseLetter] = 1;
-    }
-  }
+  // Count letter occurrences once
+  const letterOccurrences = userGuessAnalysis.reduce((acc, { letter }) => {
+    const key = letter.toLowerCase();
+    acc[key] = (acc[key] || 0) + 1;
+    return acc;
+  }, {});
 
-  for (let i = 0; i < userGuessAnalysis.length; i++) {
-    let lowercaseLetter = userGuessAnalysis[i].letter.toLowerCase();
-    if (userGuessAnalysis[i].position) {
-      possibleAnswers = possibleAnswers.filter(
-        (word) => word[i] === lowercaseLetter
-      );
-    } else {
-      if (userGuessAnalysis[i].includes) {
-        possibleAnswers = possibleAnswers.filter((word) =>
-          word.includes(lowercaseLetter)
-        );
-        possibleAnswers = possibleAnswers.filter(
-          (word) => word[i] !== lowercaseLetter
-        );
-      } else {
-        if (letterCount[lowercaseLetter] === 1) {
-          possibleAnswers = possibleAnswers.filter(
-            (word) => !word.includes(lowercaseLetter)
-          );
-        }
+  // Filter words based on analysis criteria
+  return possibleAnswers.filter((word) => {
+    return userGuessAnalysis.every(({ letter, position, includes }, index) => {
+      const lowercaseLetter = letter.toLowerCase();
+      const letterAtPosition = word[index];
+
+      // Case 1: Letter must be at specific position
+      if (position) {
+        return letterAtPosition === lowercaseLetter;
       }
-    }
-  }
-  return possibleAnswers;
+
+      // Case 2: Letter must be included but not at this position
+      if (includes) {
+        return (
+          word.includes(lowercaseLetter) && letterAtPosition !== lowercaseLetter
+        );
+      }
+
+      // Case 3: Letter must not be in word if it's the only occurrence
+      return (
+        letterOccurrences[lowercaseLetter] > 1 ||
+        !word.includes(lowercaseLetter)
+      );
+    });
+  });
 };
