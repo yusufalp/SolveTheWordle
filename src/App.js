@@ -5,9 +5,9 @@ import Words from "./components/Words";
 import Form from "./components/Form";
 import Result from "./components/Result";
 import Header from "./components/shared/Header";
-import FooterLogo from "./components/shared/FooterLogo";
+import Footer from "./components/shared/Footer";
 
-import { wordsList } from "./utils/wordsList";
+import { WORD_LIST } from "./constants/constants";
 
 import "./App.css";
 
@@ -16,7 +16,6 @@ function App() {
   const [userGuesses, setUserGuesses] = useState([]);
   const [userGuessAnalysis, setUserGuessAnalysis] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const possibleAnswers = wordsList;
 
   return (
     <div className="App" data-testid="App">
@@ -31,7 +30,9 @@ function App() {
         {isModalOpen && (
           <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
         )}
+
         <Header />
+
         {userGuessAnalysis.map((analysis, indX) => (
           <Words
             key={indX}
@@ -41,31 +42,23 @@ function App() {
             setUserGuessAnalysis={setUserGuessAnalysis}
           />
         ))}
+
         <Form
           currentGuess={currentGuess}
           setCurrentGuess={setCurrentGuess}
-          userGuesses={userGuesses}
           setUserGuesses={setUserGuesses}
-          userGuessAnalysis={userGuessAnalysis}
           setUserGuessAnalysis={setUserGuessAnalysis}
         />
       </div>
-      {userGuesses.length >= 1 && (
+
+      {userGuesses.length > 0 && (
         <Result
-          possibleAnswers={possibleAnswers}
+          possibleAnswers={WORD_LIST}
           userGuessAnalysis={userGuessAnalysis}
         />
       )}
-      <FooterLogo
-        className="twitter-logo"
-        logo="twitter"
-        link="https://twitter.com/yalp122"
-      />
-      <FooterLogo
-        className="github-logo"
-        logo="github"
-        link="https://github.com/yusufalp"
-      />
+
+      <Footer />
     </div>
   );
 }
